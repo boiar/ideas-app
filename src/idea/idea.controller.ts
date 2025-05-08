@@ -14,6 +14,8 @@ import { IdeaDto } from './idea.dto';
 import { ValidationPipe } from '../shared/validation.pipe';
 import { AuthGuard } from '../shared/auth.gaurd';
 import { User } from '../user/user.decorator';
+import { BookmarksActionsEnum } from '../shared/BookmarksActionsEnum';
+import { VoteActionsEnum } from '../shared/VoteActionsEnum';
 
 @Controller('api/idea')
 export class IdeaController {
@@ -50,5 +52,29 @@ export class IdeaController {
   @UseGuards(new AuthGuard())
   destroyIdea(@Param('id') id: string, @User('id') user) {
     return this.ideaService.destroy(id, user);
+  }
+
+  @Post(':id/bookmark')
+  @UseGuards(new AuthGuard())
+  bookmarkIdea(@Param('id') id: string, @User('id') user) {
+    return this.ideaService.bookmark(id, user, BookmarksActionsEnum.Add);
+  }
+
+  @Delete(':id/unbookmark')
+  @UseGuards(new AuthGuard())
+  unBookmarkIdea(@Param('id') id: string, @User('id') user) {
+    return this.ideaService.bookmark(id, user, BookmarksActionsEnum.Remove);
+  }
+
+  @Post(':id/upvote')
+  @UseGuards(new AuthGuard())
+  upvote(@Param('id') id: string, @User('id') userId: string) {
+    return this.ideaService.vote(id, userId, VoteActionsEnum.up);
+  }
+
+  @Post(':id/downvote')
+  @UseGuards(new AuthGuard())
+  downvote(@Param('id') id: string, @User('id') userId: string) {
+    return this.ideaService.vote(id, userId, VoteActionsEnum.down);
   }
 }

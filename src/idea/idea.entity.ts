@@ -2,9 +2,13 @@ import {
   Entity,
   Column,
   CreateDateColumn,
-  PrimaryGeneratedColumn, ManyToOne, UpdateDateColumn
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  UpdateDateColumn,
+  ManyToMany, OneToMany
 } from "typeorm";
-import { UserEntity } from "../user/user.entity";
+import { UserEntity } from '../user/user.entity';
+import { JoinTable } from 'typeorm';
 
 @Entity('idea')
 export class IdeaEntity {
@@ -23,6 +27,34 @@ export class IdeaEntity {
   @Column('text')
   description: string;
 
-  @ManyToOne(type => UserEntity, author=> author.ideas)
+  @ManyToOne((type) => UserEntity, (author) => author.ideas)
   author: UserEntity;
+
+  @ManyToMany(() => UserEntity, { cascade: true })
+  @JoinTable({
+    name: 'idea_upvotes_users', // exact table name in your MySQL
+    joinColumn: {
+      name: 'ideaId',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'userId',
+      referencedColumnName: 'id',
+    },
+  })
+  upvotes: UserEntity[];
+
+  @ManyToMany(() => UserEntity, { cascade: true })
+  @JoinTable({
+    name: 'idea_downvotes_users',
+    joinColumn: {
+      name: 'ideaId',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'userId',
+      referencedColumnName: 'id',
+    },
+  })
+  downvotes: UserEntity[];
 }
