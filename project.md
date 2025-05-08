@@ -9,10 +9,8 @@ A place to see and post ideas in the style of reddit and twitter
 - Users can upvote/down-vote ideas
 - Users can bookmark ideas
 - Users can comment on ideas
-- Ideas can be seen in realtime
 
 ## Stack
 
-- Database - PostgresSQL
+- Database - MYSQL
 - REST API - NestJS
-- GraphQL API - NestJS

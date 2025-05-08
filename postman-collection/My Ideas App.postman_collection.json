@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "d5fe7efc-edda-4653-91b2-ee81d7adb381",
+		"name": "My Ideas App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19997124"
+	},
+	"item": [
+		{
+			"name": "ideas",
+			"item": [
+				{
+					"name": "all_ideas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/idea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_idea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/idea/f9655957-818a-4ae6-9b9f-c0fb9e9f7f37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea",
+								"f9655957-818a-4ae6-9b9f-c0fb9e9f7f37"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_idea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyNjJhNDE4LTNjMWYtNDYyNy04NDE1LWUxNTZlN2E1YzIxZiIsInVzZXJuYW1lIjoia2VybzEyIiwiaWF0IjoxNzQ2NjM1Nzc1LCJleHAiOjE3NDcyNDA1NzV9.YOOfiAusNHjartoxJfzmIs1h9C4oVl8hL4dGOfD8js8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"description-updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/idea/361960a1-6c8d-4369-bc53-238ff1e71e36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea",
+								"361960a1-6c8d-4369-bc53-238ff1e71e36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_idea",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJkNGJhODI4LTgzODYtNDMyNi05ZDI4LTJhMDgxZTdiYTg5MCIsInVzZXJuYW1lIjoia2VybzMiLCJpYXQiOjE3NDY2Mjk0NDcsImV4cCI6MTc0NzIzNDI0N30.DQc9CEnoiiDxbYL7GKFAMiM5PdrDa80jIPQGpYzBRqw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idea\": \"test-2\",\n    \"description\": \"description-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/idea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookmark_idea",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJkNGJhODI4LTgzODYtNDMyNi05ZDI4LTJhMDgxZTdiYTg5MCIsInVzZXJuYW1lIjoia2VybzMiLCJpYXQiOjE3NDY2Mjk0NDcsImV4cCI6MTc0NzIzNDI0N30.DQc9CEnoiiDxbYL7GKFAMiM5PdrDa80jIPQGpYzBRqw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idea\": \"test-2\",\n    \"description\": \"description-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/idea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unbookmark_idea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyNjJhNDE4LTNjMWYtNDYyNy04NDE1LWUxNTZlN2E1YzIxZiIsInVzZXJuYW1lIjoia2VybzEyIiwiaWF0IjoxNzQ2NjM1Nzc1LCJleHAiOjE3NDcyNDA1NzV9.YOOfiAusNHjartoxJfzmIs1h9C4oVl8hL4dGOfD8js8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/idea/361960a1-6c8d-4369-bc53-238ff1e71e36/unbookmark",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea",
+								"361960a1-6c8d-4369-bc53-238ff1e71e36",
+								"unbookmark"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upvote_idea",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJkNGJhODI4LTgzODYtNDMyNi05ZDI4LTJhMDgxZTdiYTg5MCIsInVzZXJuYW1lIjoia2VybzMiLCJpYXQiOjE3NDY2Mjk0NDcsImV4cCI6MTc0NzIzNDI0N30.DQc9CEnoiiDxbYL7GKFAMiM5PdrDa80jIPQGpYzBRqw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idea\": \"test-2\",\n    \"description\": \"description-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/idea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downvote_idea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyNjJhNDE4LTNjMWYtNDYyNy04NDE1LWUxNTZlN2E1YzIxZiIsInVzZXJuYW1lIjoia2VybzEyIiwiaWF0IjoxNzQ2NjM1Nzc1LCJleHAiOjE3NDcyNDA1NzV9.YOOfiAusNHjartoxJfzmIs1h9C4oVl8hL4dGOfD8js8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/idea/ae2abaeb-7dba-48d4-a6e7-cb1b371b5f5a/downvote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea",
+								"ae2abaeb-7dba-48d4-a6e7-cb1b371b5f5a",
+								"downvote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_idea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyNjJhNDE4LTNjMWYtNDYyNy04NDE1LWUxNTZlN2E1YzIxZiIsInVzZXJuYW1lIjoia2VybzEyIiwiaWF0IjoxNzQ2NjM1Nzc1LCJleHAiOjE3NDcyNDA1NzV9.YOOfiAusNHjartoxJfzmIs1h9C4oVl8hL4dGOfD8js8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/idea/ae2abaeb-7dba-48d4-a6e7-cb1b371b5f5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"idea",
+								"ae2abaeb-7dba-48d4-a6e7-cb1b371b5f5a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"kero12\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"kero3\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "all_users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJkNGJhODI4LTgzODYtNDMyNi05ZDI4LTJhMDgxZTdiYTg5MCIsInVzZXJuYW1lIjoia2VybzMiLCJpYXQiOjE3NDY2Mjk0NDcsImV4cCI6MTc0NzIzNDI0N30.DQc9CEnoiiDxbYL7GKFAMiM5PdrDa80jIPQGpYzBRqw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
