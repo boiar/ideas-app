@@ -5,10 +5,10 @@ import {
   Get,
   Param,
   Post,
-  Put,
+  Put, Query,
   UseGuards,
-  UsePipes,
-} from '@nestjs/common';
+  UsePipes
+} from "@nestjs/common";
 import { IdeaService } from './idea.service';
 import { IdeaDto } from './idea.dto';
 import { ValidationPipe } from '../shared/validation.pipe';
@@ -21,8 +21,8 @@ import { VoteActionsEnum } from '../shared/VoteActionsEnum';
 export class IdeaController {
   constructor(private ideaService: IdeaService) {}
   @Get()
-  showAllIdeas() {
-    return this.ideaService.showAllIdeas();
+  showAllIdeas(@Query('page') page: number) {
+    return this.ideaService.showAllIdeas(page);
   }
 
   @Post()

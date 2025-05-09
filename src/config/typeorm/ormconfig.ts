@@ -3,6 +3,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { join } from 'path';
 import { IdeaEntity } from '../../idea/idea.entity';
 import { UserEntity } from '../../user/user.entity';
+import { CommentEntity } from "../../comment/comment.entity";
 
 export const ORMConfig: TypeOrmModuleOptions = {
   type: 'mysql', // MySQL as the DB type
@@ -15,7 +16,7 @@ export const ORMConfig: TypeOrmModuleOptions = {
   dropSchema: false,
   logging: true,
   logger: 'file',
-  entities: [IdeaEntity, UserEntity],
+  entities: [IdeaEntity, UserEntity, CommentEntity],
   migrations: [join(__dirname, '..', '**', 'migrations', '*.{ts,js}')], // Correct path
   migrationsTableName: 'migrations',
 };

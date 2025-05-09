@@ -25,7 +25,7 @@ export class CommentEntity {
   @JoinTable()
   author: UserEntity;
 
-  @ManyToOne(() => IdeaEntity, (idea) => idea.comments)
+  @ManyToOne(() => IdeaEntity, (idea) => idea.comments) // Correctly reference IdeaEntity and comments
   idea: IdeaEntity;
 
   toResponseObject(): CommentResponseObject {

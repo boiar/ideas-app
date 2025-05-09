@@ -42,9 +42,11 @@ export class IdeaService {
     }
   }
 
-  async showAllIdeas(): Promise<IdeaResponseObject[]> {
+  async showAllIdeas(page: number): Promise<IdeaResponseObject[]> {
     const ideas = await this.ideaRepository.find({
       relations: ['author', 'upvotes', 'downvotes'],
+      take: 2,
+      skip: 2 * (page - 1),
     });
     return ideas.map((idea) => this.toResponseObj(idea));
   }
